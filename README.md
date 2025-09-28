@@ -24,9 +24,11 @@ Naive K-Means implementation with basic visualization. The code presented here d
     With randomly initialized points, this clustering is typically somewhat accurate. But It isn't a perfect solution with more carefully-crafted datasets that are shaped into specified clusterings. For those datasets (and most datasets, honestly), you'd much rather use K-Means++, which has a much more robust center initialization method rather than just random.
 
 About generating hex codes, I had the following code:
-# hex_codes = []
-# for i in range(k):
-#     hex_codes.append('#'+chr(random.randint(65, 70))+chr(random.randint(65,70))+str(random.randint(1000,9999)))
+```python
+hex_codes = []
+for i in range(k):
+    hex_codes.append('#'+chr(random.randint(65, 70))+chr(random.randint(65,70))+str(random.randint(1000,9999)))
+```
 
 This generated a string of a random hexadecimal color value to assign to my clusters. I actually decided to use this method because I was frustrated with the documentation on colormaps in matplotlib, so I figured I'd do it myself. But basically, this works by randomizing two capital letters as the first two characters in the hex value, then a 4-digit number from 1000-9999 as the next values.
 
